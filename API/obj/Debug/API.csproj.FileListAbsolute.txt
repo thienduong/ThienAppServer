@@ -194,3 +194,6 @@ D:\ThienAppServer\API\bin\AutoMapper.dll
 D:\ThienAppServer\API\bin\API.Core.pdb
 D:\ThienAppServer\API\bin\AutoMapper.xml
 D:\ThienAppServer\API\obj\Debug\API.Migrations.AddProduct_Category_Entity.resources
+D:\ThienAppServer\API\bin\System.Web.Cors.dll
+D:\ThienAppServer\API\bin\System.Web.Http.Cors.dll
+D:\ThienAppServer\API\bin\System.Web.Http.Cors.xml

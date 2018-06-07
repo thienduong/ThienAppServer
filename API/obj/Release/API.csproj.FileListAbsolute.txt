@@ -184,3 +184,16 @@ D:\ThienAppServer\API\bin\System.Web.Http.Owin.xml
 D:\ThienAppServer\API\obj\Release\API.csprojResolveAssemblyReference.cache
 D:\ThienAppServer\API\obj\Release\API.dll
 D:\ThienAppServer\API\obj\Release\API.pdb
+D:\ThienAppServer\API\bin\API.Core.dll
+D:\ThienAppServer\API\bin\API.Framework.dll
+D:\ThienAppServer\API\bin\AutoMapper.dll
+D:\ThienAppServer\API\bin\WebActivatorEx.dll
+D:\ThienAppServer\API\bin\API.Core.pdb
+D:\ThienAppServer\API\bin\API.Framework.pdb
+D:\ThienAppServer\API\bin\AutoMapper.xml
+D:\ThienAppServer\API\obj\Release\API.Migrations.InitDb.resources
+D:\ThienAppServer\API\obj\Release\API.Migrations.AddProduct_Category_Entity.resources
+D:\ThienAppServer\API\obj\Release\API.csproj.GenerateResource.Cache
+D:\ThienAppServer\API\bin\System.Web.Cors.dll
+D:\ThienAppServer\API\bin\System.Web.Http.Cors.dll
+D:\ThienAppServer\API\bin\System.Web.Http.Cors.xml

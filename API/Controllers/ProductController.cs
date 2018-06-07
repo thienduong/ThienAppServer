@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace API.Controllers
 {
-    [RoutePrefix("products")]
+    [RoutePrefix("api/products")]
     public class ProductController : BaseApiController
     {
         /// <summary>
