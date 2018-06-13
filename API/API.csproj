@@ -282,7 +282,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="wwwroot\index.html" />
     <None Include="Properties\PublishProfiles\profile1.pubxml" />
     <None Include="Properties\PublishProfiles\thienapp - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\thienapp - Web Deploy.pubxml" />
@@ -297,7 +296,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="SwaggerXml\SwaggerUIEnableBearerToken.js" />
+    <EmbeddedResource Include="SwaggerXml\SwaggerUIEnableBearerToken.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -307,7 +306,9 @@
     </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

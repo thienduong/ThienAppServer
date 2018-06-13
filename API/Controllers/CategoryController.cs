@@ -17,6 +17,7 @@ namespace API.Controllers
     /// Category Api
     /// </summary>
     [RoutePrefix("api/categories")]
+    [Authorize]
     public class CategoryController : BaseApiController
     {
         /// <summary>

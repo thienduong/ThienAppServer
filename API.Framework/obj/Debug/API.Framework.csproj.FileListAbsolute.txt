@@ -25,3 +25,4 @@ D:\ThienAppServer\API.Framework\bin\Debug\System.Web.Razor.xml
 D:\ThienAppServer\API.Framework\bin\Debug\System.Web.WebPages.xml
 D:\ThienAppServer\API.Framework\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\ThienAppServer\API.Framework\bin\Debug\System.Web.WebPages.Razor.xml
+D:\ThienAppServer\API.Framework\obj\Debug\API.Framework.csprojResolveAssemblyReference.cache

@@ -62,7 +62,7 @@ namespace API.SwaggerXml
                                                 expires_in = 1799,
                                                 token_type = "bearer",
                                                 userId="A33DF655-CDCA-4F15-904E-0033C19111E0",
-                                                username="admin@yourApp.com"
+                                                username="thien.duong@newoceaninfosys.com"
 
                                             },
                             } }

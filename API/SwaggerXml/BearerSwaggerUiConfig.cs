@@ -20,7 +20,7 @@ namespace API.SwaggerXml
         /// <param name="config"></param>
         public void Apply(Assembly assembly, SwaggerUiConfig config)
         {
-            config.InjectJavaScript(assembly, "Nois.Api.SwaggerXml.SwaggerUIEnableBearerToken.js");
+            config.InjectJavaScript(assembly, "API.SwaggerXml.SwaggerUIEnableBearerToken.js");
         }
     }
 }

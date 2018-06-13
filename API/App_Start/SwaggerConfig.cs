@@ -2,6 +2,12 @@ using System.Web.Http;
 using WebActivatorEx;
 using API;
 using Swashbuckle.Application;
+using System.Reflection;
+using System;
+using System.Linq;
+using API.Framework;
+using Swashbuckle.Swagger;
+using System.Web.Http.Description;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -61,7 +67,7 @@ namespace API
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                        // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
                         //c.ApiKey("apiKey")
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
@@ -176,6 +182,10 @@ namespace API
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
                         //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
+
+                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        // show token API
+                        c.DocumentFilter<DocumentFilter>();
                     })
                 .EnableSwaggerUi(c =>
                     {
@@ -249,7 +259,49 @@ namespace API
                         // "apiKeyIn" can either be "query" or "header"
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
+                        LoadSwaggerUiConfig(thisAssembly, c);
                     });
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        protected static string GetXmlCommentsPath()
+        {
+            return System.String.Format(@"{0}\bin\API.XML", System.AppDomain.CurrentDomain.BaseDirectory);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="config"></param>
+        protected static void LoadSwaggerUiConfig(Assembly assembly, SwaggerUiConfig config)
+        {
+            var drTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes())
+            .Where(type => !String.IsNullOrEmpty(type.Namespace))
+            .Where(type => type.GetInterfaces().Contains(typeof(ISwaggerUi)));
+            
+            foreach (var drType in drTypes)
+            {
+                var swaggerUiConfig = (ISwaggerUi)Activator.CreateInstance(drType);
+                swaggerUiConfig.Apply(assembly, config);
+            }
+        }
+    }
+
+    class DocumentFilter : IDocumentFilter
+    {
+        public void Apply(SwaggerDocument swaggerDoc, SchemaRegistry schemaRegistry, IApiExplorer apiExplorer)
+        {
+            var drTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes())
+            .Where(type => !String.IsNullOrEmpty(type.Namespace))
+            .Where(type => type.GetInterfaces().Contains(typeof(IPathItem)));
+
+            foreach (var drType in drTypes)
+            {
+                var pathItem = (IPathItem)Activator.CreateInstance(drType);
+                swaggerDoc.paths.Add(pathItem.GetApiKey(), pathItem.GetPathItem());
+            }
         }
     }
 }

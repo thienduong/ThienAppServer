@@ -2,3 +2,4 @@ D:\ThienAppServer\API.Helper\bin\Debug\API.Helper.dll
 D:\ThienAppServer\API.Helper\bin\Debug\API.Helper.pdb
 D:\ThienAppServer\API.Helper\obj\Debug\API.Helper.dll
 D:\ThienAppServer\API.Helper\obj\Debug\API.Helper.pdb
+D:\ThienAppServer\API.Helper\obj\Debug\API.Helper.csprojResolveAssemblyReference.cache
