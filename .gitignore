@@ -1,7 +1,6 @@
 .vs
-obj
-bin
-/API
+/API/bin
+/API/obj
 /API.Core/bin
 /API.Core/obj
 /API.Framework/bin
