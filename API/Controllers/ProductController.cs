@@ -33,7 +33,9 @@ namespace API.Controllers
             {
                 //Get list Product
                 //var products = _productService.GetAll();
-                var products = db.Products.ToList();
+                //var products = db.Products.ToList();
+                var products = _productService.GetAll();
+                var role = RoleManager.Roles.ToList();
 
                 if (products == null)
                 {

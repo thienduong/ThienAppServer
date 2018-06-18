@@ -6,6 +6,10 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using System.Web.Http.Cors;
+using Autofac;
+using API.Framework;
+using System.Web.Mvc;
+using Autofac.Integration.Mvc;
 
 namespace API
 {
@@ -29,6 +33,34 @@ namespace API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            RegisterDependencies(config);
+        }
+
+        private static void RegisterDependencies(HttpConfiguration config)
+        {
+            //we create new instance of ContainerBuilder
+            var builder = new ContainerBuilder();
+            var container = builder.Build();
+
+            //register dependencies provided by other assemblies
+            builder = new ContainerBuilder();
+
+            var drTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(a => a.GetTypes())
+            .Where(type => !String.IsNullOrEmpty(type.Namespace))
+            .Where(type => type.GetInterfaces().Contains(typeof(IDependencyRegistrar)));
+
+            var drInstances = new List<IDependencyRegistrar>();
+            foreach (var drType in drTypes)
+                drInstances.Add((IDependencyRegistrar)Activator.CreateInstance(drType));
+            //sort
+            drInstances = drInstances.AsQueryable().OrderBy(t => t.Order).ToList();
+            foreach (var dependencyRegistrar in drInstances)
+                dependencyRegistrar.Register(builder);
+            builder.Update(container);
+
+            EngineContext.Resolver = new ResolverManager(container);
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
 }
