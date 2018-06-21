@@ -1,4 +1,5 @@
-﻿using API.Framework.Data;
+﻿using API.Core.Entities.Vendors;
+using API.Framework.Data;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -33,6 +34,11 @@ namespace API.Core.Entities
         /// Category
         /// </summary>
         public virtual Category Category { get; set; }
+        public string VenderId { get; set; }
+        /// <summary>
+        /// Category
+        /// </summary>
+        public virtual Vendor Vendor { get; set; }
 
     }
 

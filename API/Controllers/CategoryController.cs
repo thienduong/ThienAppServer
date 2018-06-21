@@ -36,12 +36,13 @@ namespace API.Controllers
         public IHttpActionResult List()
         {
             var model = new CategoryListModel();
-
+            _categoryService.Search("asdf");
             try
             {
                 //Get list Category
-                //var categorys = _categoryService.GetAll();
-                var categorys = db.Categories.ToList();
+                var categorys = _categoryService.GetAll();
+                //var categorys = db.Categories.ToList();
+
                 if (categorys == null)
                 {
                     //not create before

@@ -74,7 +74,10 @@
     <Compile Include="DependencyRegistrar.cs" />
     <Compile Include="Entities\Categories\Category.cs" />
     <Compile Include="Entities\Products\Product.cs" />
+    <Compile Include="Entities\Vendors\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\ICategoryService.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\ProductService.cs" />
   </ItemGroup>
