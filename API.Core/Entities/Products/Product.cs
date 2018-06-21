@@ -1,4 +1,4 @@
-﻿using API.Core.Entities.Vendors;
+﻿using API.Core.Entities;
 using API.Framework.Data;
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace API.Core.Entities
         /// Category
         /// </summary>
         public virtual Category Category { get; set; }
-        public string VenderId { get; set; }
+        public int VendorId { get; set; }
         /// <summary>
         /// Category
         /// </summary>
@@ -54,7 +54,11 @@ namespace API.Core.Entities
 
             this.HasRequired(p => p.Category)
                 .WithMany(c => c.Products)
-                .HasForeignKey(p => p.CategoryId);
+               .HasForeignKey(p => p.CategoryId);
+
+            this.HasRequired(p => p.Vendor)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.VendorId);
         }
     }
 }

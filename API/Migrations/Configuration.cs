@@ -33,11 +33,17 @@ namespace API.Migrations
               new Core.Entities.Category { Id = 3, Name = "Category 3", Description = "Des 3" }
             );
 
+            //context.Vendors.AddOrUpdate(x => x.Id,
+            //  new Core.Entities.Vendor { Id = 1, Name = "Vendor 1" }
+            //);
             context.Products.AddOrUpdate(x => x.Id,
-              new Core.Entities.Product { Id = 1, Name = "Product 1", Description = "Des 1", CategoryId = 1 },
-              new Core.Entities.Product { Id = 2, Name = "Product 2", Description = "Des 2", CategoryId = 1 },
-              new Core.Entities.Product { Id = 3, Name = "Product 3", Description = "Des 3", CategoryId = 1 }
+              new Core.Entities.Product { Id = 1, Name = "Product 1", Description = "Des 1", CategoryId = 1, VendorId = 1 },
+              new Core.Entities.Product { Id = 2, Name = "Product 2", Description = "Des 2", CategoryId = 1, VendorId = 1 },
+              new Core.Entities.Product { Id = 3, Name = "Product 3", Description = "Des 3", CategoryId = 1, VendorId = 1 }
             );
+
+
+
         }
     }
 }

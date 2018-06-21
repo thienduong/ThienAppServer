@@ -79,7 +79,9 @@
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ICategoryService.cs" />
     <Compile Include="Services\IProductService.cs" />
+    <Compile Include="Services\IVendorService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\VendorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

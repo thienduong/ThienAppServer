@@ -29,6 +29,7 @@ namespace API.Models
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Vendor> Vendors { get; set; }
 
         public static ApplicationDbContext Create()
         {

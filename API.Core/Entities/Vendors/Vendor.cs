@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API.Core.Entities.Vendors
+namespace API.Core.Entities
 {
     public class Vendor : BaseEntity
     {     
-        public string vendorName { get; set; }
+        public string Name { get; set; }
         public virtual ICollection<Product> Products { get; set; }
     }
 }

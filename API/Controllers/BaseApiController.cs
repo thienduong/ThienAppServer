@@ -43,7 +43,9 @@ namespace API.Controllers
 
         #region Service
         protected IProductService _productService { get { return GetService<IProductService>(); } }
-        protected ICategoryService _categoryService { get { return GetService<ICategoryService>(); } }
+        protected ICategoryService _categoryService { get { return GetService<ICategoryService>(); }}
+        protected IVendorService _vendorService { get { return GetService<IVendorService>(); } }
+
         #endregion
     }
 }
