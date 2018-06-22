@@ -15,9 +15,9 @@ using System.Web.Http;
 namespace API.Controllers
 {
     /// <summary>
-    /// Category Api
+    /// Vendor Api
     /// </summary>
-    [RoutePrefix("api/vendor")]
+    [RoutePrefix("api/vendors")]
     public class VendorController : BaseApiController
     {
         /// <summary>
