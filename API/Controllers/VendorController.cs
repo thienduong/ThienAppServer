@@ -39,13 +39,13 @@ namespace API.Controllers
            
             try
             {
-                //Get list Category
+                //Get list Vendor
                 var vendors = _vendorService.GetAll();
-                //var vendors = db.Categories.ToList();
+                //var vendors = db.Vendors.ToList();
 
                 if (vendors == null)
                 {
-                    //not create before
+                  
                     model.ErrorMessages.Add("List Vendor is not found.");
                     return new HttpApiActionResult(HttpStatusCode.BadRequest, model);
                 }

@@ -41,6 +41,12 @@ namespace API.Migrations
               new Core.Entities.Product { Id = 2, Name = "Product 2", Description = "Des 2", CategoryId = 1, VendorId = 1 },
               new Core.Entities.Product { Id = 3, Name = "Product 3", Description = "Des 3", CategoryId = 1, VendorId = 1 }
             );
+            context.Vendors.AddOrUpdate(x => x.Id,
+            new Core.Entities.Vendor { Id = 1, Name = "Vendor 1", Address = "District 1", PhoneNumber = "0123456789"},
+             new Core.Entities.Vendor { Id = 2, Name = "Vendor 2", Address = "District 2", PhoneNumber = "01234563349" },
+             new Core.Entities.Vendor { Id = 3, Name = "Vendor 3", Address = "District 3", PhoneNumber = "012345905689" }
+
+          );
 
 
 

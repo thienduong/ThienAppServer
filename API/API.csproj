@@ -278,6 +278,10 @@
     <Compile Include="Migrations\201806210822278_Add_Vendor_Entity.Designer.cs">
       <DependentUpon>201806210822278_Add_Vendor_Entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806250322380_Add_Property_VenderTable.cs" />
+    <Compile Include="Migrations\201806250322380_Add_Property_VenderTable.Designer.cs">
+      <DependentUpon>201806250322380_Add_Property_VenderTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -319,6 +323,9 @@
     <Content Include="Scripts\respond.min.js" />
     <EmbeddedResource Include="Migrations\201806210822278_Add_Vendor_Entity.resx">
       <DependentUpon>201806210822278_Add_Vendor_Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806250322380_Add_Property_VenderTable.resx">
+      <DependentUpon>201806250322380_Add_Property_VenderTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SwaggerXml\SwaggerUIEnableBearerToken.js" />
     <Content Include="Web.config" />

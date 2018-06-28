@@ -21,6 +21,8 @@ namespace API.Models.Vendors
         /// Vendor name
         /// </summary>
         public string Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
 
     }
     /// <summary>
@@ -50,6 +52,9 @@ namespace API.Models.Vendors
         /// vendor Name
         /// </summary>
         public string  Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+
     }
     [Validator(typeof(VendorEditModel))]
     public class VendorEditModel
@@ -59,6 +64,9 @@ namespace API.Models.Vendors
         /// </summary>
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
+
     }
     #endregion
     #region Mapping
