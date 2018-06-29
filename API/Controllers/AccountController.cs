@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using API.Models;
 using API.Providers;
 using API.Results;
+using System.Linq;
 
 namespace API.Controllers
 {
@@ -64,7 +65,19 @@ namespace API.Controllers
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
+        }  // GET api/Account/ListUser
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("ListUser")]
+        public IHttpActionResult GetListUser()
+        {
+
+            var listUser = UserManager.Users.ToList();
+
+
+            return Json(listUser);
+
         }
+      
 
         // POST api/Account/Logout
         [Route("Logout")]
