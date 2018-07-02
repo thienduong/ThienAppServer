@@ -17,6 +17,8 @@ using API.Models;
 using API.Providers;
 using API.Results;
 using System.Linq;
+using AutoMapper;
+using API.Models.Users;
 
 namespace API.Controllers
 {
@@ -66,17 +68,9 @@ namespace API.Controllers
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }  // GET api/Account/ListUser
-        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
-        [Route("ListUser")]
-        public IHttpActionResult GetListUser()
-        {
-
-            var listUser = UserManager.Users.ToList();
-
-
-            return Json(listUser);
-
-        }
+        
+     
+       
       
 
         // POST api/Account/Logout
