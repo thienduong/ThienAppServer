@@ -1,0 +1,10 @@
+.vs
+/packages
+/API/bin
+/API/obj
+/API.Core/bin
+/API.Core/obj
+/API.Framework/bin
+/API.Framework/obj
+/API.Helper/bin
+/API.Helper/obj
